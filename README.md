@@ -1,37 +1,32 @@
 # 默笙工具箱2.0
 
-#### 介绍
-默笙工具箱2.0版本
-
-#### 软件架构
-软件架构说明
+默笙工具箱2.0 使用说明
+您在使用中有任何问题都可以添加<a href="https://jq.qq.com/?_wv=1027&k=5wqpi4T">QQ群：484395502 【默笙程序交流群】</a>进行意见反馈。<br>
+<h4 style="color: red">该项目完全开源，如果您是购买过来的，请联系您的购买商退款！如需商业通途需要联系QQ：304366授权</h4>
 
 
 #### 安装教程
 
-1. xxxx
-2. xxxx
-3. xxxx
-
-#### 使用说明
-
-1. xxxx
-2. xxxx
-3. xxxx
-
-#### 参与贡献
-
-1. Fork 本仓库
-2. 新建 Feat_xxx 分支
-3. 提交代码
-4. 新建 Pull Request
+1. 访问域名/install 进行安装即可 所需环境php<7  php<5.3
 
 
-#### 码云特技
+#### 更新说明
 
-1. 使用 Readme\_XXX.md 来支持不同的语言，例如 Readme\_en.md, Readme\_zh.md
-2. 码云官方博客 [blog.gitee.com](https://blog.gitee.com)
-3. 你可以 [https://gitee.com/explore](https://gitee.com/explore) 这个地址来了解码云上的优秀开源项目
-4. [GVP](https://gitee.com/gvp) 全称是码云最有价值开源项目，是码云综合评定出的优秀开源项目
-5. 码云官方提供的使用手册 [https://gitee.com/help](https://gitee.com/help)
-6. 码云封面人物是一档用来展示码云会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
+1.优化数据结构
+
+2.后台全新UI
+
+3.新增验证码功能
+
+4.新增防xss功能
+
+5.新增在线上传工具功能
+
+6.新增编辑首页功能
+
+7.新增多模版（需要额外模版可找作者定制Q304366）
+
+8.新增应用商店（暂未开放）
+
+9.前台优化数据结构
+
