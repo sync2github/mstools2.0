@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../../images/favicon.ico">
+	<!-- 引入header -->
+    <include file="Public/header" />
+    <!-- 结束 -->
+  
+  <!-- Main Navbar -->
+  <div class="main-nav">  	
+	   <nav class="navbar navbar-expand-lg">
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+              <li class="nav-item ">
+                <a class="nav-link" href="/admin.php"><span class="active-item-here"></span><i class="fa fa-dashboard mr-5"></i> <span>仪表盘</span></a>
+              </li>
+              <li class="nav-item dropdown active">
+
+                <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <i class="fa fa-th mr-5"></i> <span class="active-item-here"></span><span>应用中心</span>
+                </a>                  
+                <ul class="dropdown-menu multilevel scale-up-left">
+                	<li class="nav-item"><a class="nav-link active" href="{:U('tools/index')}">应用管理</a></li>
+                	<li class="nav-item"><a class="nav-link" href="{:U('tools/add')}">新增应用</a></li>     
+                	<li class="nav-item"><a class="nav-link" href="{:U('tools/classe')}">分类管理</a></li> 
+                  <li class="nav-item"><a class="nav-link" href="{:U('tools/link')}">友链管理</a></li>
+                  <li class="nav-item"><a class="nav-link" href="{:U('tools/menu')}">导航管理</a></li>            
+                </ul>                 
+              </li> 
+              
+              <li class="nav-item dropdown m-menu m-fix">
+                <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <i class="fa fa-table mr-5"></i> <span>系统设置</span>
+                </a>
+                <div class="dropdown-menu menu-mega mega-menu-auto scale-up-left">
+                    <ul class="dropdown-menu multilevel scale-up-left">
+                        <li>
+                            <a class="nav-link" href="{:U('system/index')}" title=""><i class="fa fa-creative-commons mr-15"></i>基础设置</a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="{:U('system/upinfo')}" title=""><i class="fa fa-address-card-o mr-15"></i>信息修改</a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="{:U('system/temp')}" title=""><i class="fa fa-cubes mr-15"></i>模板设置</a>
+                        </li>
+                       <!--  -->
+                    </ul><!-- /.menu-mega-child one-four -->
+                          
+                    
+                </div>
+                  
+              </li>
+              
+              <li class="nav-item dropdown m-menu">
+                <a class="nav-link" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <i class="fa fa-laptop mr-5"></i> <span>应用商店</span>
+                </a>
+                <div class="dropdown-menu menu-mega scale-up-down">
+                  
+                    
+                </div>
+                  
+              </li>               
+              <li class="nav-item dropdown">
+                <a class="nav-link" href="{:U('update/index')}">
+                  <i class="fa fa-puzzle-piece mr-5"></i>检查更新
+                </a>
+              </li>
+               
+            </ul>
+          </div>
+        </nav>  	  
+  </div>
+
+  
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+        修改你的应用基本信息吧！
+      </h1>
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/admin.php"><i class="fa fa-dashboard"></i> 仪表盘</a></li>
+        <li class="breadcrumb-item"><a href="#">应用中心</a></li>
+        <li class="breadcrumb-item active">应用管理</li>
+      </ol>
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+    	<div class="box">
+			  <div class="box-header with-border">
+				<h3 class="box-title"> <strong>修改须知</strong></h3>
+			  </div>
+              <div class="box-body">
+                <p><code>修改必看</code></p>
+                <p>该页面仅限修改应用的<code>基本信息</code>
+                	
+                </p>
+              </div>
+            </div>
+		<div class="row">
+			<div class="box">
+            <div class="box-header with-border">
+              <h4 class="box-title"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">修改你现有的分类</font></font></h4>
+            </div>
+            <!-- /.box-header -->
+            <!-- form start -->
+            <form id="f" enctype="multipart/form-data" class="form-horizontal form-element">
+              <div class="box-body">
+              	<div class="form-group row">
+                  <label for="inputEmail3" class="col-sm-2 control-label">应用LOGO</label>
+
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" id="logo" name="logo" placeholder="应用LOGO" value="{$info.logo}">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label for="inputEmail3" class="col-sm-2 control-label">应用名称</label>
+
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" id="name" name="name" placeholder="应用名称" value="{$info.title}">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label for="inputEmail3" class="col-sm-2 control-label">应用路径</label>
+
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" id="path" name="path" placeholder="不要随意修改" value="{$info.url}">
+                    <p class="help-block text-red">这个路径请不要随便修改，否则会导致应用打不开，如果您是站外链接可以修改。</p>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label for="inputEmail3" class="col-sm-2 control-label">应用作者</label>
+
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" id="author" name="author" placeholder="作者" value="{$info.author}">
+                    <!-- <p class="help-block text-red">这个路径请不要随便修改，否则会导致应用打不开，如果您是站外链接可以修改。</p> -->
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label for="inputPassword3" class="col-sm-2 control-label">分类</label>
+
+                  <div class="col-sm-10">
+                    <select class="form-control" id="classid" name="classid">
+                      <option value="{$cn.id}">{$cn.classname}</option>
+                      <volist name="class" id="vo">
+
+                        <neq name="info.cid" value="vo.id">
+                          <option value="{$vo.id}">{$vo.classname}</option>
+                        </neq>
+                        
+                    </volist>
+                  </select>
+                  </div>
+                </div>
+              </div>
+              <!-- /.box-body -->
+              <div class="box-footer">
+                <a href="{:U('tools/index')}" class="btn btn-default"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">取消</font></font></a>
+                <button type="button" id="classedit" class="btn btn-info pull-right"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">提交</font></font></button>
+              </div>
+              <!-- /.box-footer -->
+            </form>
+          </div>
+
+        <!-- left column -->
+        
+        
+      </div>
+      <!-- /.row -->
+      
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+  
+	<include file="Public/footer" />
+	<script src="__PUBLIC__/Admin/js/layer/layer.js"></script>
+	<script type="text/javascript">
+	   	$("#classedit").click(function(){
+        var uid ={$info.id};
+        var logo = $("#logo").val();//logo
+        var path = $("#path").val();//路径
+	   		var name = $("#name").val();//名称
+        var author = $("#author").val();//作者
+	   		var classid = $('#classid option:selected').val();//分类
+        
+	  		var e =0;
+	    	if (name =='') {
+	    		layer.msg('请输入分类名称呢！', function () {
+                //关闭后的操作
+                	return false;
+            	});
+            	return false;
+	    	}
+	    	if (classid =='') {
+	    		layer.msg('请输入分类标识！', function () {
+                //关闭后的操作
+                	return false;
+            	});
+            	return false;
+	    	}
+	    	var index = layer.load(1, {shade: false}); //0代表加载的风格，支持0-2
+			
+      if (e == 0) {
+            $.post("{:U('tools/tooledit')}", {id:uid,logo:logo,path:path,name:name,author:author,classid:classid}, function (data) {
+              var index = layer.load(1, {shade: false}); //0代表加载的风格，支持0-2
+                if (data.status == '1') {
+                  layer.closeAll('loading');
+                    layer.alert(data.info, { icon: 6 });//layer.msg('不开心。。', {icon: 5});
+                    window.location.href = data.url;
+                } else {
+                  layer.closeAll('loading');
+                    layer.alert(data.info, { icon: 5 });
+                }
+            })
+        }  
+		});
+	</script>
+	
+</body>
+</html>

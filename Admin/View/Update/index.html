@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../images/favicon.ico">
+    <!-- 引入header -->
+    <include file="Public/header" />
+    <!-- 结束 -->
+  <!-- Main Navbar -->
+  <div class="main-nav">    
+      <nav class="navbar navbar-expand-lg">
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="/admin.php"><span class="active-item-here"></span><i class="fa fa-dashboard mr-5"></i> <span>仪表盘</span></a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <i class="fa fa-th mr-5"></i> <span>应用中心</span>
+                </a>                  
+                <ul class="dropdown-menu multilevel scale-up-left">
+                  <li class="nav-item"><a class="nav-link" href="{:U('tools/index')}">应用管理</a></li>
+                  <li class="nav-item"><a class="nav-link active" href="{:U('tools/add')}">新增应用</a></li>     
+                  <li class="nav-item"><a class="nav-link" href="{:U('tools/classe')}">分类管理</a></li> 
+                  <li class="nav-item"><a class="nav-link" href="{:U('tools/link')}">友链管理</a></li>
+                  <li class="nav-item"><a class="nav-link" href="{:U('tools/menu')}">导航管理</a></li>              
+                </ul>                 
+              </li> 
+              
+              <li class="nav-item dropdown m-menu m-fix">
+                <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <i class="fa fa-table mr-5"></i> <span>系统设置</span>
+                </a>
+                <div class="dropdown-menu menu-mega mega-menu-auto scale-up-left">
+                    <ul class="dropdown-menu multilevel scale-up-left">
+                        <li>
+                            <a class="nav-link" href="{:U('system/index')}" title=""><i class="fa fa-creative-commons mr-15"></i>基础设置</a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="{:U('system/upinfo')}" title=""><i class="fa fa-address-card-o mr-15"></i>信息修改</a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="{:U('system/temp')}" title=""><i class="fa fa-cubes mr-15"></i>模板设置</a>
+                        </li>
+                       <!--  -->
+                    </ul><!-- /.menu-mega-child one-four -->
+                          
+                    
+                </div>
+                  
+              </li>
+              
+              <li class="nav-item dropdown m-menu">
+                <a class="nav-link" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <i class="fa fa-laptop mr-5"></i> <span>应用商店</span>
+                </a>
+                <div class="dropdown-menu menu-mega scale-up-down">
+                  
+                    
+                </div>
+                  
+              </li>               
+              <li class="nav-item  active">
+                <a class="nav-link" href="{:U('update/index')}"><span class="active-item-here"></span>
+                  <i class="fa fa-puzzle-piece mr-5"></i>检查更新
+                </a>
+              </li>
+               
+            </ul>
+          </div>
+        </nav>    
+  </div>
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="row">
+        
+        <div class="box">
+            <div class="box-header">
+              <h3 class="box-title"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">检查更新</font></font></h3>
+               <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">您可以点击下方</font></font><code>检查更新</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">按钮，来获取最新版本的默笙工具箱，如果您有自定义修改本源码，请不要点击该按钮！</font></font></p>
+            </div>
+            <div class="box-body pad res-tb-block">
+              <div class="button-box">
+            <button id="check" class="tst1 btn btn-info btn-rounded"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">检查更新</font></font></button>
+         
+        </div>              
+            </div>
+            <!-- /.box-body -->
+          </div>
+           <div class="box" style="display: none;" id="upsuccess"><!-- -->
+            <div class="box-header">
+              <h3 class="box-title"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">正常警报</font></font></h3>
+            </div>
+            <div class="box-body pad res-tb-block">
+               <div class="alert alert-success" id="info"></div>
+                <div class="alert alert-secondary" id="log"></div>
+                <input type="hidden" id="downurl" value="">
+                <input type="hidden" id="bb" value="">
+               <button id="upnow" class="tst1 btn btn-info btn-rounded"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">开始更新</font></font></button>             
+            </div>
+            <!-- /.box-body -->
+          </div>
+      </div>   
+
+
+      <!-- /.row -->          
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+  <!-- 引入footer -->
+  <include file="Public/footer" />
+  <!-- 结束 -->
+    <!-- Fab admin horizontal-layout -->
+    <script src="__PUBLIC__/Admin/js/horizontal-layout.js"></script>
+    <script src="__PUBLIC__/Admin/js/layer/layer.js"></script>
+    <script type="text/javascript">
+      $("#check").click(function () {
+        var index = layer.load(1, {shade: false}); //0代表加载的风格，支持0-2
+        var e = 0;
+        var tool = 1;
+        if (e == 0) {
+            $.post("{:U('update/checkup')}", {name:tool}, function (data) {
+                if (data.status == '1') {
+                    layer.closeAll('loading');
+                    layer.alert(data.info, { icon: 6 });//layer.msg('不开心。。', {icon: 5});
+                    $("#upsuccess").show();
+                    $('#info').html(data.msg+'&nbsp;&nbsp;&nbsp;&nbsp;服务器版本最后更新时间为：'+data.time);
+                    $('#log').html('版本日志：<br>'+data.log);
+                    $('#downurl').val(data.downurl);
+                    $('#bb').val(data.bb);
+                } else {
+                     layer.closeAll('loading');
+                     layer.alert(data.info, { icon: 6 });//layer.msg('不开心。。', {icon: 5});
+                     $("#upsuccess").show();
+                     $('#info').html(data.msg);
+                     $('#log').html(data.msg);
+                }
+            })
+        }
+
+    })
+    </script>
+    <script type="text/javascript">
+      $("#upnow").click(function () {
+        var index = layer.load(1, {shade: false}); //0代表加载的风格，支持0-2
+        var url=$("#downurl").val();
+        var bb=$("#bb").val();
+        if (url=='') {
+          layer.closeAll('loading');
+          layer.msg('当前已为最新版本', function () {
+                //关闭后的操作
+                return false;
+            });
+            return false;
+        }
+        if (bb=='') {
+          layer.closeAll('loading');
+          layer.msg('数据异常请重试', function () {
+                //关闭后的操作
+                return false;
+            });
+            return false;
+        }
+        var e = 0;
+        if (e == 0) {
+            $.post("{:U('update/updown')}", {url:url,bb:bb}, function (data) {
+                // if (datam.status == 1) {
+                    layer.closeAll('loading');
+                    layer.alert("更新成功！", { icon: 6 });//layer.msg('不开心。。', {icon: 5});
+                    window.location.reload()
+                // } else {
+                //     layer.closeAll('loading');
+                //     layer.alert(data.info, { icon: 5 });
+                // }
+            })
+        }
+
+    })
+    </script>
+    
+</body>
+</html>
